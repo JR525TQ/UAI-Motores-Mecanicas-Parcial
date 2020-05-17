@@ -29,15 +29,30 @@ public class ControlJugador : MonoBehaviour
         ClickToMove(rayo);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Coleccionable"))
+        {
+            navMeshAgent.speed += 20;
+            navMeshAgent.angularSpeed += 500;
+            navMeshAgent.acceleration += 2;
+            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
+        }
+    }
+
     void ClickToMove(Ray rayo)
     {
         RaycastHit hit;
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (Physics.Raycast(rayo, out hit, 400))
+            while(!isRunning)
             {
-                navMeshAgent.destination = hit.point;
+                if (Physics.Raycast(rayo, out hit, 400))
+                {
+                    navMeshAgent.destination = hit.point;
+                }
             }
         }
 
