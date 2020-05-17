@@ -47,13 +47,10 @@ public class ControlJugador : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            while(!isRunning)
-            {
-                if (Physics.Raycast(rayo, out hit, 400))
+            if (Physics.Raycast(rayo, out hit, 400))
                 {
-                    navMeshAgent.destination = hit.point;
-                }
-            }
+                   navMeshAgent.destination = hit.point;
+                }             
         }
 
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
