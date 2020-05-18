@@ -26,7 +26,7 @@ public class Spawning : MonoBehaviour
         while(true)
         {
             SpawnItemVelocidad();
-            yield return new WaitForSeconds(30);
+            yield return new WaitForSeconds(10);
         }
     }
 

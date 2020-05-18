@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class ControlJugador : MonoBehaviour
 {
 
-    private Animator animator;
-
-    private NavMeshAgent navMeshAgent;
-
+ // private NavMeshAgent navMeshAgent;
+    private CapsuleCollider capsuleCollider;
+    private Rigidbody rb;
+    public LayerMask capaPiso;
     public Camera cam;
-
-    private bool isRunning = false;
+    public float magnitudSalto;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        navMeshAgent = GetComponent<NavMeshAgent>();
+     // navMeshAgent = GetComponent<NavMeshAgent>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -27,17 +28,26 @@ public class ControlJugador : MonoBehaviour
         Ray rayo = cam.ScreenPointToRay(Input.mousePosition);
 
         ClickToMove(rayo);
+
+        Salto();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Coleccionable"))
         {
+            /*vMeshAgent.acceleration += 20;
             navMeshAgent.speed += 20;
-            navMeshAgent.angularSpeed += 500;
-            navMeshAgent.acceleration += 2;
             other.gameObject.SetActive(false);
-            Destroy(other.gameObject);
+            Destroy(other.gameObject);*/
+        }
+    }
+
+    void Salto()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector3.up * magnitudSalto, ForceMode.Impulse);
         }
     }
 
@@ -47,22 +57,11 @@ public class ControlJugador : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (Physics.Raycast(rayo, out hit, 400))
+            if (Physics.Raycast(rayo, out hit))
                 {
-                   navMeshAgent.destination = hit.point;
-                }             
+                // navMeshAgent.destination = hit.point;
+                }            
         }
-
-        if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
-        {
-            isRunning = false;
-        }
-        else
-        {
-            isRunning = true;
-        }
-
-        animator.SetBool("isRunning", isRunning);
     }
 }
 
