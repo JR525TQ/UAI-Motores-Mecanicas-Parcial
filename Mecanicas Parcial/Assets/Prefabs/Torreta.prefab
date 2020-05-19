@@ -311,10 +311,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ae09cce73095f4cb5d7187321fc0e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedDisparo: 20
   rango: 10
   proyectil: {fileID: 1235311080000917557, guid: 208dde0e2d7b0d74791f066166cc892e,
     type: 3}
+  startTiempoDisparos: 2
   target: {fileID: 0}
 --- !u!1 &9159200356871974382
 GameObject:

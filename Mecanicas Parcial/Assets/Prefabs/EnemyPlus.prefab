@@ -41,7 +41,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3138629821662385551}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -63,6 +63,7 @@ MonoBehaviour:
   startTiempoDisparos: 4
   proyectil: {fileID: 2585465407099438122, guid: 3cd3acc40a61d754e82fc99b1562d944,
     type: 3}
+  vida: 70
 --- !u!1 &6437880690788065083
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,8 @@ public class ControlEnemigoBoss : ControlEnemigo
             transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, speed * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, GameObject.FindGameObjectWithTag("Player").transform.rotation, speed * Time.deltaTime);
         }
+
+        CheckVida();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5426742790081654419}
   - component: {fileID: 5426742790081654420}
   - component: {fileID: 5426742790081654417}
+  - component: {fileID: -1426276487443214067}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,6 +68,8 @@ MonoBehaviour:
     m_Bits: 1
   magnitudSalto: 10
   rapidez: 8
+  vida: 100
+  mana: 40
 --- !u!54 &5426742790081654420
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -102,6 +105,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1426276487443214067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426742790081654418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2c805e64640354c8ee2cb95d6660d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torreta: {fileID: 9159200356675599293, guid: 50656515ae47dd94e8cbd4d69fc4b87e, type: 3}
 --- !u!1001 &5426742790938614422
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -126,9 +126,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   stoppingDistance: 2
-  startTiempoDisparos: 2
+  startTiempoDisparos: 3
   proyectil: {fileID: 1834201981608165365, guid: 52abfc1e4314aa5459d3f72520ceb93c,
     type: 3}
+  vida: 50
 --- !u!135 &3599145005564119796
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8579059184157007486}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

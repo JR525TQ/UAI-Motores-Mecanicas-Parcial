@@ -18,6 +18,7 @@ public class ControlJugador : MonoBehaviour
     public float magnitudSalto;
     public float rapidez;
     public float vida = 100.0f;
+    public float mana = 40.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,7 @@ public class ControlJugador : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R))
         {
-            Reiniciar();
+            IniciarEscena(0);
         }
     }
 
@@ -114,18 +115,23 @@ public class ControlJugador : MonoBehaviour
         vida -= daño;
     }
 
+    public void GastarMana(float manaGastado)
+    {
+        mana -= manaGastado;
+    }
+
     void CheckSiEstaVivo()
     {
         if(vida <= 0)
         {
             gameObject.SetActive(false);
-            Reiniciar();
+            IniciarEscena(0);
         }
     }
 
-    void Reiniciar()
+    void IniciarEscena(int escena)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(escena);
     }
 
        //No encontre manera de saltar con la barra espaciadora y mover el personaje con navmesh al mismo tiempo.

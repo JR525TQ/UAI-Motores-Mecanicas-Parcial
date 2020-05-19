@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ControlTorreta : MonoBehaviour
 {
-    public float speedDisparo;
     public float rango = 15.0f;
+    public GameObject proyectil;
 
+    private float tiempoDisparos;
+    public float startTiempoDisparos;
 
     [SerializeField]
     private GameObject target;
-    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,16 @@ public class ControlTorreta : MonoBehaviour
         Vector3 rotation = vistaRotacion.eulerAngles;
 
         transform.rotation = Quaternion.Euler(0.0f, rotation.y, 0.0f);
+
+        if (tiempoDisparos <= 0)
+        {
+            Instantiate(proyectil, transform.position, Quaternion.identity);
+            tiempoDisparos = startTiempoDisparos;
+        }
+        else
+        {
+            tiempoDisparos -= Time.deltaTime;
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -69,5 +80,4 @@ public class ControlTorreta : MonoBehaviour
     {
         return target;
     }
-
 }

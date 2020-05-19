@@ -43,7 +43,12 @@ public class ControlEnemigo : MonoBehaviour
             tiempoDisparos -= Time.deltaTime;
         }
 
-        if(vida <= 0)
+        CheckVida();
+    }
+
+    public void CheckVida()
+    {
+        if (vida <= 0)
         {
             gameObject.SetActive(false);
             Destroy(gameObject);
@@ -53,5 +58,6 @@ public class ControlEnemigo : MonoBehaviour
     public void RecibirDaño(float daño)
     {
         vida -= daño;
+        Debug.Log("La vida del enemigo es: " + vida);
     }
 }
