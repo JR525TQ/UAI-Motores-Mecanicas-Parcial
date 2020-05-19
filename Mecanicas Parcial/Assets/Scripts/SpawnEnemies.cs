@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawning : MonoBehaviour
+public class SpawnEnemies : MonoBehaviour
 {
 
-    public GameObject itemVelocidadPreFab;
+    public GameObject enemy;
     public Camera cam;
     public float tiempoRespawn;
 
@@ -17,21 +17,23 @@ public class Spawning : MonoBehaviour
 
     void SpawnItemVelocidad()
     {
-            GameObject item = Instantiate(itemVelocidadPreFab) as GameObject;
-            item.transform.position = new Vector3(Random.Range(transform.position.x, transform.position.x + 10), 1, Random.Range(transform.position.z, transform.position.z + 10));
+        GameObject item = Instantiate(enemy) as GameObject;
+        item.transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
     }
 
     IEnumerator Spawns()
     {
-        while(true)
+        while (true)
         {
-            SpawnItemVelocidad();
             yield return new WaitForSeconds(tiempoRespawn);
+            SpawnItemVelocidad();
+            
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        
     }
 }

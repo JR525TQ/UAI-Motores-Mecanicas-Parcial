@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 
 public class ControlJugador : MonoBehaviour
@@ -15,6 +17,7 @@ public class ControlJugador : MonoBehaviour
     public LayerMask capaPiso;
     public float magnitudSalto;
     public float rapidez;
+    public float vida = 100.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,20 +34,45 @@ public class ControlJugador : MonoBehaviour
         /*Ray rayo = cam.ScreenPointToRay(Input.mousePosition);
         ClickToMove(rayo);*/
 
+        CheckSiEstaVivo();
+
         MovimientoPlayer();
 
         Salto();
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Reiniciar();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Coleccionable"))
+        CheckTagColeccionable(other);
+        CheckTagHeal(other);
+    }
+
+    void CheckTagHeal(Collider col)
+    {
+        if (col.gameObject.CompareTag("Heal"))
         {
-            /*vMeshAgent.acceleration += 20;
-            navMeshAgent.speed += 20;*/
+            if(vida < 100)
+            {
+                vida += 5.0f;
+            }
+            col.gameObject.SetActive(false);
+            Debug.Log("Vida restante: " + vida);
+            Destroy(col.gameObject);
+        }
+    }
+
+    void CheckTagColeccionable(Collider col)
+    {
+        if (col.gameObject.CompareTag("Coleccionable"))
+        {
             rapidez += 1.5f;
-            other.gameObject.SetActive(false);
-            Destroy(other.gameObject);
+            col.gameObject.SetActive(false);
+            Destroy(col.gameObject);
         }
     }
 
@@ -79,6 +107,25 @@ public class ControlJugador : MonoBehaviour
     {
         return Physics.CheckCapsule(capsuleCollider.bounds.center, new Vector3(capsuleCollider.bounds.center.x, capsuleCollider.bounds.min.y,
                             capsuleCollider.bounds.center.z), capsuleCollider.radius* .9f, capaPiso);
+    }
+
+    public void RecibirDaño(float daño)
+    {
+        vida -= daño;
+    }
+
+    void CheckSiEstaVivo()
+    {
+        if(vida <= 0)
+        {
+            gameObject.SetActive(false);
+            Reiniciar();
+        }
+    }
+
+    void Reiniciar()
+    {
+        SceneManager.LoadScene(0);
     }
 
        //No encontre manera de saltar con la barra espaciadora y mover el personaje con navmesh al mismo tiempo.
