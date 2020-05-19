@@ -48,6 +48,7 @@ public class ControlBalaTorreta : MonoBehaviour
     {
         if(target==null)
         {
+            Destroy(gameObject);
             return;
         }
 

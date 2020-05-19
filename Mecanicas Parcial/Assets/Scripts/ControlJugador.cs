@@ -59,7 +59,8 @@ public class ControlJugador : MonoBehaviour
         {
             if(vida < 100)
             {
-                vida += 5.0f;
+                vida += 10.0f;
+                mana += 5.0f;
             }
             col.gameObject.SetActive(false);
             Debug.Log("Vida restante: " + vida);

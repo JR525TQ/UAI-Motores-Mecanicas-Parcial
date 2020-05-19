@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControlTorreta : MonoBehaviour
 {
     public float rango = 15.0f;
+    public float vida = 70.0f;
     public GameObject proyectil;
 
     private float tiempoDisparos;
@@ -68,6 +69,16 @@ public class ControlTorreta : MonoBehaviour
         {
             tiempoDisparos -= Time.deltaTime;
         }
+
+        if(vida <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void RecibirDaño(float daño)
+    {
+        vida -= daño;
     }
 
     private void OnDrawGizmosSelected()

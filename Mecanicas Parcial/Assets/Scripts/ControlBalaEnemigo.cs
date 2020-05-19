@@ -35,6 +35,13 @@ public class ControlBalaEnemigo : MonoBehaviour
             Debug.Log("Vida restante: " + other.gameObject.GetComponent<ControlJugador>().vida);
             Destroy(gameObject);
         }
+
+        if(other.gameObject.CompareTag("Torreta"))
+        {
+            other.gameObject.GetComponent<ControlTorreta>().RecibirDaño(damage);
+            Debug.Log("Vida restante: " + other.gameObject.GetComponent<ControlTorreta>().vida);
+            Destroy(gameObject);
+        }
     }
 
     public GameObject getPlayer()
