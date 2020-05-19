@@ -15,6 +15,8 @@ public class ControlEnemigo : MonoBehaviour
 
     private Transform player;
 
+    public float vida = 50f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +42,16 @@ public class ControlEnemigo : MonoBehaviour
         {
             tiempoDisparos -= Time.deltaTime;
         }
+
+        if(vida <= 0)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+    }
+
+    public void RecibirDaño(float daño)
+    {
+        vida -= daño;
     }
 }

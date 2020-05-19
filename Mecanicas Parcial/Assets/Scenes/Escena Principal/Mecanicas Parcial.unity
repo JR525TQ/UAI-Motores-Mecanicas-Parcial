@@ -7983,77 +7983,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82edb66b42348a14b879d99951284647, type: 3}
---- !u!1001 &8868867262961768169
+--- !u!1001 &9159200356561242339
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8868867262494910436, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
-        type: 3}
-      propertyPath: rango
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910437, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
-        type: 3}
-      propertyPath: m_Name
-      value: Torreta
-      objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.92
       objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.07
       objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -4.11
       objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8868867262494910439, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+    - target: {fileID: 9159200356675599235, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159200356675599292, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+        type: 3}
+      propertyPath: tiempoDisparos
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159200356675599292, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+        type: 3}
+      propertyPath: startTiempoDisparos
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159200356675599293, guid: 50656515ae47dd94e8cbd4d69fc4b87e,
+        type: 3}
+      propertyPath: m_Name
+      value: Torreta
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50656515ae47dd94e8cbd4d69fc4b87e, type: 3}
