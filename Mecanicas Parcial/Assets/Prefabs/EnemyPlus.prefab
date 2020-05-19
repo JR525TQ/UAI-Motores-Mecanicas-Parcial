@@ -64,6 +64,8 @@ MonoBehaviour:
   proyectil: {fileID: 2585465407099438122, guid: 3cd3acc40a61d754e82fc99b1562d944,
     type: 3}
   vida: 70
+  playerCompleto: {fileID: 0}
+  idEnemy: 2
 --- !u!1 &6437880690788065083
 GameObject:
   m_ObjectHideFlags: 0

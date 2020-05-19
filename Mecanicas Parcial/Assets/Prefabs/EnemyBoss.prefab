@@ -63,6 +63,8 @@ MonoBehaviour:
   startTiempoDisparos: 0
   proyectil: {fileID: 0}
   vida: 100
+  playerCompleto: {fileID: 0}
+  idEnemy: 3
   "da\xF1o": 30
 --- !u!1 &6368526713010047694
 GameObject:

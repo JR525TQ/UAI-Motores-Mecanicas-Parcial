@@ -23,7 +23,7 @@ public class ControlConstruccion : MonoBehaviour
         {
             if(player.GetComponent<ControlJugador>().mana >= 10.0f)
             {
-                Instantiate(torreta, new Vector3(transform.position.x, 0.07f, transform.position.z) , Quaternion.identity);
+                Instantiate(torreta, new Vector3(transform.position.x, 0.07f, transform.position.z + 1) , Quaternion.identity);
                 player.GetComponent<ControlJugador>().GastarMana(10);
             } else {
                 Debug.Log("El mana no es suficiente");

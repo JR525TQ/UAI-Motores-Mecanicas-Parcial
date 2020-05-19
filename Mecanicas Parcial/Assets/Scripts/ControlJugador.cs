@@ -19,6 +19,7 @@ public class ControlJugador : MonoBehaviour
     public float rapidez;
     public float vida = 100.0f;
     public float mana = 40.0f;
+    private float puntos = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,8 @@ public class ControlJugador : MonoBehaviour
         ClickToMove(rayo);*/
 
         CheckSiEstaVivo();
+
+        CheckGano(puntos);
 
         MovimientoPlayer();
 
@@ -133,6 +136,34 @@ public class ControlJugador : MonoBehaviour
     void IniciarEscena(int escena)
     {
         SceneManager.LoadScene(escena);
+    }
+
+    void CheckGano(float puntos)
+    {
+        if(puntos >= 200)
+        {
+            IniciarEscena(0);
+        }
+    }
+
+    public void SumarPuntos(int idEnemy)
+    {
+        switch(idEnemy)
+        {
+            case 1: puntos += 15.0f;
+                break;
+            case 2: puntos += 25.0f;
+                break;
+            case 3: puntos += 40.0f;
+                break;
+            default: Debug.Log("id enemy no valido");
+                break;
+        }
+    }
+
+    public float Puntos()
+    {
+        return puntos;
     }
 
        //No encontre manera de saltar con la barra espaciadora y mover el personaje con navmesh al mismo tiempo.

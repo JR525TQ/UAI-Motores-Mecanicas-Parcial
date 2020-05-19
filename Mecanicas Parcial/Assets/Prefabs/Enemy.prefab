@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420987125322585290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.13, z: 0}
+  m_LocalScale: {x: 1.2883, y: 1.2883, z: 1.2883}
   m_Children: []
   m_Father: {fileID: 8579059184157007487}
   m_RootOrder: 0
@@ -106,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 8579059184157007486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.58586, y: 0.58586, z: 0.58586}
+  m_LocalScale: {x: 0.5214154, y: 0.5214154, z: 0.5214154}
   m_Children:
   - {fileID: 7682722791304730087}
   m_Father: {fileID: 0}
@@ -130,6 +130,8 @@ MonoBehaviour:
   proyectil: {fileID: 1834201981608165365, guid: 52abfc1e4314aa5459d3f72520ceb93c,
     type: 3}
   vida: 50
+  playerCompleto: {fileID: 0}
+  idEnemy: 1
 --- !u!135 &3599145005564119796
 SphereCollider:
   m_ObjectHideFlags: 0

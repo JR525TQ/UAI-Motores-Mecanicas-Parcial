@@ -17,10 +17,16 @@ public class ControlEnemigo : MonoBehaviour
 
     public float vida = 50f;
 
+    public GameObject playerCompleto;
+
+    public int idEnemy;
+
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerCompleto = GameObject.FindGameObjectWithTag("Player");
         tiempoDisparos = startTiempoDisparos;
     }
 
@@ -52,6 +58,7 @@ public class ControlEnemigo : MonoBehaviour
         {
             gameObject.SetActive(false);
             Destroy(gameObject);
+            playerCompleto.GetComponent<ControlJugador>().SumarPuntos(idEnemy);
         }
     }
 
