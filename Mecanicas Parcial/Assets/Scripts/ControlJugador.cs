@@ -129,7 +129,7 @@ public class ControlJugador : MonoBehaviour
         if(vida <= 0)
         {
             gameObject.SetActive(false);
-            IniciarEscena(0);
+            IniciarEscena(3);
         }
     }
 
@@ -142,7 +142,7 @@ public class ControlJugador : MonoBehaviour
     {
         if(puntos >= 200)
         {
-            IniciarEscena(0);
+            IniciarEscena(2);
         }
     }
 
