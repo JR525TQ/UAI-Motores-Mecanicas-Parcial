@@ -18,7 +18,7 @@ public class Spawning : MonoBehaviour
     void SpawnItemVelocidad()
     {
             GameObject item = Instantiate(itemVelocidadPreFab) as GameObject;
-            item.transform.position = new Vector3(Random.Range(transform.position.x, transform.position.x + 10), 1, Random.Range(transform.position.z, transform.position.z + 10));
+            item.transform.position = new Vector3(Random.Range(transform.position.x -6, transform.position.x + 6), 1, Random.Range(transform.position.z -6 , transform.position.z + 6));
     }
 
     IEnumerator Spawns()

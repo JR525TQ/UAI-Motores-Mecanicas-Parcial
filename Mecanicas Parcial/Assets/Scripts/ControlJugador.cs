@@ -61,15 +61,16 @@ public class ControlJugador : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Heal"))
         {
-            if(vida <= 100)
+            if(vida < 100)
             {
-                if (vida != 100.0f)
-                {
+                 if(vida + 10.0f >= 100)
+                 {
+                    vida = 100.0f;
+                 } else {
                     vida += 10.0f;
-                }
-                
-                mana += 5.0f;
+                 }                
             }
+            mana += 5.0f;
             col.gameObject.SetActive(false);
             Debug.Log("Vida restante: " + vida);
             Destroy(col.gameObject);
@@ -106,7 +107,6 @@ public class ControlJugador : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movimiento), Time.deltaTime * 7.3f);
             animator.SetBool("estaCorriendo", true);
         } else {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movimiento), Time.deltaTime * 7.3f);
             animator.SetBool("estaCorriendo", false);
         }
         
@@ -122,7 +122,7 @@ public class ControlJugador : MonoBehaviour
 
     public void RecibirDaño(float daño)
     {
-        vida -= daño;
+        vida -= daño;    
     }
 
     public void GastarMana(float manaGastado)
@@ -156,11 +156,11 @@ public class ControlJugador : MonoBehaviour
     {
         switch(idEnemy)
         {
-            case 1: puntos += 15.0f;
+            case 1: puntos += 10.0f;
                 break;
-            case 2: puntos += 25.0f;
+            case 2: puntos += 15.0f;
                 break;
-            case 3: puntos += 40.0f;
+            case 3: puntos += 30.0f;
                 break;
             default: Debug.Log("id enemy no valido");
                 break;

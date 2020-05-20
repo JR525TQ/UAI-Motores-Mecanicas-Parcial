@@ -131,7 +131,6 @@ MonoBehaviour:
   proyectil: {fileID: 1834201981608165365, guid: 52abfc1e4314aa5459d3f72520ceb93c,
     type: 3}
   vida: 50
-  playerCompleto: {fileID: 0}
   idEnemy: 1
 --- !u!135 &3599145005564119796
 SphereCollider:

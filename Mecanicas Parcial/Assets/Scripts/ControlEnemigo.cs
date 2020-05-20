@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ControlEnemigo : MonoBehaviour
 {
@@ -8,25 +9,21 @@ public class ControlEnemigo : MonoBehaviour
     public float speed;
     public float stoppingDistance;
 
-    private float tiempoDisparos;
+    public float vida = 50f;
+    public int idEnemy;
+
     public float startTiempoDisparos;
     public float rango = 15;
 
     public GameObject proyectil;
 
+    private float tiempoDisparos;
     private Transform player;
-
-    public float vida = 50f;
-
-    public GameObject playerCompleto;
-
-    public int idEnemy;
-
+    private GameObject playerCompleto;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         playerCompleto = GameObject.FindGameObjectWithTag("Player");
         tiempoDisparos = startTiempoDisparos;
     }
@@ -35,15 +32,15 @@ public class ControlEnemigo : MonoBehaviour
     void Update()
     {
 
-        float distancia = Vector3.Distance(transform.position, player.position);
+        float distancia = Vector3.Distance(transform.position, playerCompleto.transform.position);
 
-        if (Vector3.Distance(transform.position, player.position) > stoppingDistance)
+        if (Vector3.Distance(transform.position, playerCompleto.transform.position) > stoppingDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, player.rotation, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playerCompleto.transform.position, speed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, playerCompleto.transform.rotation, speed * Time.deltaTime);
         }
 
-        if(tiempoDisparos <= 0 && distancia < rango)
+        if (tiempoDisparos <= 0 && distancia < rango)
         {
             Instantiate(proyectil, transform.position, Quaternion.identity);
             tiempoDisparos = startTiempoDisparos;
@@ -59,10 +56,11 @@ public class ControlEnemigo : MonoBehaviour
     public void CheckVida()
     {
         if (vida <= 0)
-        {
+        {     
             gameObject.SetActive(false);
             Destroy(gameObject);
             playerCompleto.GetComponent<ControlJugador>().SumarPuntos(idEnemy);
+
         }
     }
 
