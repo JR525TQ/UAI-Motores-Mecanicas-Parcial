@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  stoppingDistance: 8
+  stoppingDistance: 6
   startTiempoDisparos: 0.8
   proyectil: {fileID: 1834201981608165365, guid: 52abfc1e4314aa5459d3f72520ceb93c,
     type: 3}

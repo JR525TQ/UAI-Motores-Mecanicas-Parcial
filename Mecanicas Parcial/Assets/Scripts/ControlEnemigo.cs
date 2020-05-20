@@ -10,6 +10,7 @@ public class ControlEnemigo : MonoBehaviour
 
     private float tiempoDisparos;
     public float startTiempoDisparos;
+    public float rango = 15;
 
     public GameObject proyectil;
 
@@ -33,13 +34,16 @@ public class ControlEnemigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        float distancia = Vector3.Distance(transform.position, player.position);
+
         if (Vector3.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, player.rotation, speed * Time.deltaTime);
         }
 
-        if(tiempoDisparos <= 0)
+        if(tiempoDisparos <= 0 && distancia < rango)
         {
             Instantiate(proyectil, transform.position, Quaternion.identity);
             tiempoDisparos = startTiempoDisparos;

@@ -19,6 +19,7 @@ public class ControlJugador : MonoBehaviour
     public float rapidez;
     public float vida = 100.0f;
     public float mana = 40.0f;
+    public float puntosParaGanar = 400.0f;
     private float puntos = 0.0f;
 
     // Start is called before the first frame update
@@ -60,9 +61,13 @@ public class ControlJugador : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Heal"))
         {
-            if(vida < 100)
+            if(vida <= 100)
             {
-                vida += 10.0f;
+                if (vida != 100.0f)
+                {
+                    vida += 10.0f;
+                }
+                
                 mana += 5.0f;
             }
             col.gameObject.SetActive(false);
@@ -140,7 +145,7 @@ public class ControlJugador : MonoBehaviour
 
     void CheckGano(float puntos)
     {
-        if(puntos >= 200)
+        if(puntos >= puntosParaGanar)
         {
             IniciarEscena(2);
         }

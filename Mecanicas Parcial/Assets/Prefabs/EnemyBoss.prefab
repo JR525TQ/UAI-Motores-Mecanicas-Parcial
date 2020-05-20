@@ -65,7 +65,7 @@ MonoBehaviour:
   vida: 100
   playerCompleto: {fileID: 0}
   idEnemy: 3
-  "da\xF1o": 30
+  "da\xF1o": 40
 --- !u!1 &6368526713010047694
 GameObject:
   m_ObjectHideFlags: 0
