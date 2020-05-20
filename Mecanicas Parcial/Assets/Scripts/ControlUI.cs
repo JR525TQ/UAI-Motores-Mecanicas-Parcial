@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class ControlUI : MonoBehaviour
 {
 
-    [SerializeField] Text vida;
-    [SerializeField] Text mana;
-    [SerializeField] Text puntos;
+    public Text vida;
+    public Text mana;
+    public Text puntos;
 
     public GameObject playerCompleto;
 

@@ -2337,7 +2337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.42526597, y: -0, z: -0, w: 0.90506846}
-  m_LocalPosition: {x: -1.38, y: 16.24, z: -10.85}
+  m_LocalPosition: {x: -1.38, y: 16.16, z: -8.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8858,7 +8858,7 @@ PrefabInstance:
     - target: {fileID: 5426742790081654419, guid: 82edb66b42348a14b879d99951284647,
         type: 3}
       propertyPath: magnitudSalto
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5426742790081654419, guid: 82edb66b42348a14b879d99951284647,
         type: 3}
