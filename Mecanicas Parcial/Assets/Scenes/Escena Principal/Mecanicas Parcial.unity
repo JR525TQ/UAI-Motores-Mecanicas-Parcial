@@ -438,7 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 8579059184157007486, guid: 8a01a8292a62f3a40bc1d17237e28434, type: 3}
   cam: {fileID: 963194227}
-  tiempoRespawn: 6
+  tiempoRespawn: 12
 --- !u!4 &249510184
 Transform:
   m_ObjectHideFlags: 0
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   itemVelocidadPreFab: {fileID: 6924445455587495566, guid: 57caf36e9379a5544945d7ed3a57db57,
     type: 3}
   cam: {fileID: 963194227}
-  tiempoRespawn: 8
+  tiempoRespawn: 6
 --- !u!4 &416804771
 Transform:
   m_ObjectHideFlags: 0

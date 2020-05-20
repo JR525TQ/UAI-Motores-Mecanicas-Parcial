@@ -106,6 +106,7 @@ public class ControlJugador : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movimiento), Time.deltaTime * 7.3f);
             animator.SetBool("estaCorriendo", true);
         } else {
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movimiento), Time.deltaTime * 7.3f);
             animator.SetBool("estaCorriendo", false);
         }
         
