@@ -127,6 +127,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 6
   startTiempoDisparos: 0.8
+  rango: 15
   proyectil: {fileID: 1834201981608165365, guid: 52abfc1e4314aa5459d3f72520ceb93c,
     type: 3}
   vida: 50

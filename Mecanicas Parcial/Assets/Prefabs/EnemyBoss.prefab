@@ -61,6 +61,7 @@ MonoBehaviour:
   speed: 8
   stoppingDistance: 0
   startTiempoDisparos: 0
+  rango: 15
   proyectil: {fileID: 0}
   vida: 100
   playerCompleto: {fileID: 0}
